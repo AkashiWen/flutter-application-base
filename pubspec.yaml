@@ -1,0 +1,33 @@
+name: common
+description: A new Flutter package project.
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  ## ---- common ----
+  get: ^4.6.5
+  get_storage: ^2.0.3
+  flutter_easyloading: ^3.0.5 # loading效果
+  flutter_screenutil: ^5.5.4 #适配方案
+  image_picker: ^0.8.6 # 图片选中库
+  intl: ^0.17.0 # 时间DateFormat
+  package_info_plus: ^3.0.1 # 包信息
+  getwidget: ^3.0.1 # UI Kit library built with Flutter SDK
+
+  ## ---- log ----
+  logger: 1.1.0
+
+  ## ---- network ----
+  dio: 4.0.0 # 网络请求
+  crypto: 3.0.1  #MD5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
