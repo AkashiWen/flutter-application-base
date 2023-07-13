@@ -18,6 +18,7 @@ dependencies:
 
   ## ---- 3rd part ----
   pull_to_refresh: 2.0.0 # 上拉加载下拉刷新
+  video_player: ^2.6.0 # 視頻播放器
 
 dev_dependencies:
   flutter_test:
