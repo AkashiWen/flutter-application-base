@@ -26,19 +26,6 @@ class MyApp extends BaseMaterialApp<BaseSampleLauncherStrategy> {
 
   @override
   void buildConfig(BaseSampleLauncherStrategy launcherStrategy) {
-    // 将启动策略中带入的配置写进环境变量BuildConfig给全局使用
-    String env = launcherStrategy.envName;
-    String host = launcherStrategy.host;
-    bool isDebug = launcherStrategy.isDebug;
-    String proxy = launcherStrategy.proxy;
-    String proxyPort = launcherStrategy.proxyPort;
-    logI(
-        "my_app.dart: launcher strategy env: $env, isDebug: $isDebug, host: $host, proxy: $proxy");
-    BuildConfig.envName = env;
-    BuildConfig.isDebug = isDebug;
-    BuildConfig.host = host;
-    BuildConfig.proxy = proxy;
-    BuildConfig.proxyPort = proxyPort;
   }
 
 // @override
