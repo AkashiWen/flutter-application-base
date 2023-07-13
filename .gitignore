@@ -19,3 +19,44 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+
+
+# IDE and editor files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# Flutter/Dart specific files
+**/build/
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# iOS specific files
+**/Pods/
+**/*.xcworkspace
+**/*.xcuserstate
+**/ios/Podfile.lock
+
+# Android specific files
+**/android/**/gradle-wrapper.jar
+**/android/**/gradle-wrapper.properties
+**/android/.gradle/
+**/android/captures/
+
+# macOS specific files
+.DS_Store
+
+# Other
+*.log
+*.log.*
+*.tmp
+*.bak
+*.swp
+Thumbs.db
+ehthumbs.db
+desktop.ini

@@ -32,24 +32,18 @@ abstract class BaseView<C> extends GetView<C> with NavigationHelper {
   /// 纯色背景
   Color get background => Get.theme.primaryColor;
 
-  /// 底部导航栏颜色
-  Color? get bottomNavigationBarColor => null;
-
-  /// 頂部狀態欄顏色
-  Color? get statusBarColor => null;
-
   /// 返回按钮点击
   Future<bool>? onBackPressed() => null;
 
   @override
   Widget build(BuildContext context) {
     // bottom navigation
-    SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(
-        statusBarColor: statusBarColor,
-        systemNavigationBarColor: bottomNavigationBarColor,
-      ),
-    );
+    // SystemChrome.setSystemUIOverlayStyle(
+    //   SystemUiOverlayStyle(
+    //     statusBarColor: statusBarColor,
+    //     systemNavigationBarColor: bottomNavigationBarColor,
+    //   ),
+    // );
 
     return WillPopScope(
       onWillPop: () => onBackPressed.call() ?? Future.value(true),
@@ -59,8 +53,8 @@ abstract class BaseView<C> extends GetView<C> with NavigationHelper {
         // draw
         drawer: buildDrawer(context) != null
             ? Builder(
-                builder: (BuildContext context) => buildDrawer(context)!,
-              )
+          builder: (BuildContext context) => buildDrawer(context)!,
+        )
             : null,
         // bottom
         bottomNavigationBar: buildBottomNavigation(),

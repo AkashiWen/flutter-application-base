@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -11,6 +12,9 @@ abstract class BaseAppBarPage<C> extends BaseView<C> {
   /// appbar标题
   abstract final String appBarTitle;
 
+  /// appbar shadow深度
+  double? get appBarElevation => null;
+
   /// 動態appbar標題
   RxString? get rxAppbarTitle => null;
 
@@ -19,6 +23,12 @@ abstract class BaseAppBarPage<C> extends BaseView<C> {
 
   /// 加载appbar背景色
   Color get appbarBackgroundColor => const Color.fromARGB(255, 33, 33, 33);
+
+  /// 底部导航栏颜色
+  Color? get bottomNavigationBarColor => null;
+
+  /// 頂部狀態欄顏色
+  Color? get statusBarColor => null;
 
   /// 左边按钮图标
   Widget? buildLeftIcon() => const Icon(Icons.arrow_back_outlined);
@@ -51,25 +61,26 @@ abstract class BaseAppBarPage<C> extends BaseView<C> {
   AppBar _customAppBar() {
     return AppBar(
       centerTitle: true,
+      elevation: appBarElevation,
       title: rxAppbarTitle != null
           ? Obx(
-              () => Text(
-                rxAppbarTitle?.value ?? '',
-                style: TextStyle(
-                  fontSize: 18.w,
-                  fontWeight: FontWeight.w700,
-                  color: appBarTitleColor,
-                ),
-              ),
-            )
+            () => Text(
+          rxAppbarTitle?.value ?? '',
+          style: TextStyle(
+            fontSize: 18.w,
+            fontWeight: FontWeight.w700,
+            color: appBarTitleColor,
+          ),
+        ),
+      )
           : Text(
-              appBarTitle,
-              style: TextStyle(
-                fontSize: 18.w,
-                fontWeight: FontWeight.w700,
-                color: appBarTitleColor,
-              ),
-            ),
+        appBarTitle,
+        style: TextStyle(
+          fontSize: 18.w,
+          fontWeight: FontWeight.w700,
+          color: appBarTitleColor,
+        ),
+      ),
       leading: InkWell(
         onTap: () => onTapLeft.call(),
         child: Container(
@@ -80,6 +91,10 @@ abstract class BaseAppBarPage<C> extends BaseView<C> {
       ),
       leadingWidth: 100,
       backgroundColor: appbarBackgroundColor,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: statusBarColor,
+        systemNavigationBarColor: bottomNavigationBarColor,
+      ),
       actions: [
         Builder(
           builder: (context) => InkWell(
