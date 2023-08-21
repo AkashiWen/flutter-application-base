@@ -24,7 +24,7 @@ class AResponse<T> {
   /// 對dio的Response進行JSON轉換
   static Future<AResponse<T>> convert<T>(
     Future<Response<String>> Function() futureTask,
-    T Function(dynamic data) onResponse,
+    T? Function(dynamic data)? onResponse,
   ) async {
     try {
       return await futureTask().then(
@@ -68,7 +68,7 @@ class AResponse<T> {
   /// 處理ResponseBean的map數據
   static AResponse<T> handleDioResponse<T>(
     Response<String> dioResponse,
-    T Function(dynamic data) onResponse,
+    T? Function(dynamic data)? onResponse,
   ) {
     Map<String, dynamic> map = jsonDecode(dioResponse.data!);
     var code = map["code"] ?? dioResponse.statusCode;
@@ -80,7 +80,7 @@ class AResponse<T> {
         "msg:[$message] || ,\n "
         "${const JsonEncoder.withIndent('  ').convert(data)}");
     return AResponse(
-      onResponse.call(data),
+      onResponse?.call(data),
       code: code,
       message: message,
     );

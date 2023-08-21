@@ -28,7 +28,7 @@ abstract class ApiRepository {
     Method method = Method.get,
     Map<String, dynamic>? params,
     String? contentType,
-    Function(dynamic data)? format,
+    T? Function(dynamic data)? format,
   }) async {
     Options? options;
     if (contentType?.isNotEmpty == true) {
