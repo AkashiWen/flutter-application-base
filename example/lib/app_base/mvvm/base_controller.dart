@@ -21,4 +21,8 @@ class BaseController extends BaseViewModel {
     logE(message);
   }
 
+  @override
+  void onHidden() {
+  }
+
 }
