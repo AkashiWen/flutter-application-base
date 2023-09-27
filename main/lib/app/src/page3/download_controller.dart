@@ -1,5 +1,5 @@
-import 'package:example/app_base/app_base.dart';
-import 'package:example/app_base/repository/file_repo.dart';
+import 'package:main/app_base/app_base.dart';
+import 'package:main/app_base/repository/file_repo.dart';
 
 class DownloadController extends BaseController {
   final FileRepo _fileRepo = Get.find();

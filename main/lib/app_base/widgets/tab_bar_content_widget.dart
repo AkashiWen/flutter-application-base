@@ -1,5 +1,5 @@
-import 'package:example/app_base/app_base.dart';
-import 'package:example/app_base/config/colors.dart';
+import 'package:main/app_base/app_base.dart';
+import 'package:main/app_base/config/colors.dart';
 import 'package:flutter/material.dart';
 
 /// tabbar + tabbarview

@@ -1,5 +1,5 @@
 import 'package:common/base/mvvm/view/base_empty_page.dart';
-import 'package:example/app/src/page3/download_controller.dart';
+import 'package:main/app/src/page3/download_controller.dart';
 import 'package:flutter/material.dart';
 
 class DownloadPage extends BaseEmptyPage<DownloadController> {

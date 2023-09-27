@@ -1,4 +1,4 @@
-import 'package:example/app_base/config/build_config.dart';
+import 'package:main/app_base/config/build_config.dart';
 import 'package:common/common/top.dart';
 
 class User {
