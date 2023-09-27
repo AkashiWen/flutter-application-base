@@ -1,4 +1,4 @@
-import 'package:main/app_base/app_base.dart';
+import 'package:main/app_base/exports.dart';
 
 class FileRepo extends BaseRepo {
   Future downFile(

@@ -25,9 +25,21 @@ abstract class BaseMaterialApp<T extends ALauncherStrategy>
   /// 页面路由
   late ARoute route;
 
+  /// 多语言配置
+  Translations? buildTranslations() => null;
+
+  /// 默认语言
+  Locale? get defaultLocale => const Locale('zh', 'CN');
+
+  /// 回滚语言
+  Locale? get fallbackLocale => const Locale('zh', 'CN');
+
   /// material app
   GetMaterialApp buildApp(BuildContext context, Widget? child) =>
       GetMaterialApp(
+        translations: buildTranslations(),
+        locale: defaultLocale,
+        fallbackLocale: fallbackLocale,
         builder: (context, child) {
           // 安装loading
           child = GLoading.instance.init(context, child);

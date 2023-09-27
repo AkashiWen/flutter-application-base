@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:common/common/top.dart';
-import 'package:main/app_base/app_base.dart';
+import 'package:main/app_base/exports.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'launcher/strategy/base_sample_launcher_strategy.dart';

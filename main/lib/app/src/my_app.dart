@@ -1,11 +1,9 @@
 import 'package:common/base/app/base_material_app.dart';
 import 'package:common/base/route/a_route.dart';
-import 'package:common/common/log/a_logger.dart';
-import 'package:common/common/startup/startup.dart';
 
-import '../../app_base/config/build_config.dart';
-import '../../app_base/config/user.dart';
+import '../../app_base/exports.dart';
 import '../launcher/strategy/base_sample_launcher_strategy.dart';
+import 'config/translation/translation_config.dart';
 
 /// app
 // ignore: must_be_immutable
@@ -27,6 +25,10 @@ class MyApp extends BaseMaterialApp<BaseSampleLauncherStrategy> {
   @override
   void buildConfig(BaseSampleLauncherStrategy launcherStrategy) {
   }
+
+  @override
+  Translations? buildTranslations() => TranslationConfig();
+
 
 // @override
 // GetMaterialApp buildApp(BuildContext context, Widget? child) =>
