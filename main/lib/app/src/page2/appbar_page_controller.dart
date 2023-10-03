@@ -14,7 +14,7 @@ class AppBarPageController extends BaseController {
 
   Future<void> fetchMenuStatus() async {
     logW(".....");
-    MenuStatusBeanHolder? holder =
+    MenuStatusBeanResponse? holder =
     await apiLaunch(() => _menuRepo.fetchProfile());
     logW("response: ${holder?.dataList}");
   }

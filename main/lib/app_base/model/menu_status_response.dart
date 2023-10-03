@@ -1,5 +1,17 @@
 part of repo;
 
+/// api 数据转换和持有
+class MenuStatusBeanResponse extends DataHolder<MenuStatusBean> {
+  // api
+  MenuStatusBeanResponse.fromMap(dynamic map) {
+    convertList(map['menuStatusList'], (data) => MenuStatusBean.fromJson(data));
+  }
+
+  @override
+  bool isEmpty() => dataList?.isEmpty ?? true;
+}
+
+
 /// 菜品状态tag bean
 class MenuStatusBean extends LocalModel {
   int id = 0;
@@ -17,13 +29,3 @@ class MenuStatusBean extends LocalModel {
   };
 }
 
-/// api 数据转换和持有
-class MenuStatusBeanHolder extends DataHolder<MenuStatusBean> {
-  // api
-  MenuStatusBeanHolder.fromMap(dynamic map) {
-    convertList(map['menuStatusList'], (data) => MenuStatusBean.fromJson(data));
-  }
-
-  @override
-  bool isEmpty() => dataList?.isEmpty ?? true;
-}
