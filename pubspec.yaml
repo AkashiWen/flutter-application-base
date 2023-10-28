@@ -17,6 +17,7 @@ dependencies:
   intl: ^0.17.0 # 时间DateFormat
   package_info_plus: ^3.0.1 # 包信息
   getwidget: ^3.0.1 # UI Kit library built with Flutter SDK
+  shared_preferences: ^2.2.2 # 本地存储
 
   ## ---- log ----
   logger: 1.1.0
