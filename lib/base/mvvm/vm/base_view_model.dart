@@ -149,6 +149,8 @@ abstract class BaseViewModel extends SuperController with NavigationHelper {
         _handleClientError(response.message);
         break;
       case unauthorized:
+        handleUnAuthorizedError(response.message);
+        break;
       case forbidden:
         handleUnAuthorizedError(response.message);
         break;

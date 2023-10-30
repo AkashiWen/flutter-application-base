@@ -36,30 +36,6 @@ class AResponse<T> {
         int code = error.response?.statusCode ?? 0;
         String msg = error.response?.statusMessage ?? '';
 
-        if (code == HttpStatus.unauthorized) {
-          return AResponse(null, code: code, message: msg);
-        } else {
-          switch (error.type) {
-            case DioErrorType.cancel:
-              msg = "請求取消";
-              break;
-            case DioErrorType.connectTimeout:
-              msg = "連接超時";
-              break;
-            case DioErrorType.sendTimeout:
-              msg = "請求超時";
-              break;
-            case DioErrorType.receiveTimeout:
-              msg = "響應超時";
-              break;
-            case DioErrorType.response:
-              msg = "響應报文异常";
-              break;
-            case DioErrorType.other:
-              msg = "網絡異常";
-              break;
-          }
-        }
         return AResponse(null, code: code, message: msg);
       }
       return AResponse(null, message: error.toString());
