@@ -31,11 +31,17 @@ class AResponse<T> {
         (dioResponse) => handleDioResponse(dioResponse, onResponse),
       );
     } catch (error) {
-      logger.e("---- Response.convert() ====> catch request error: $error");
       if (error is DioError) {
         int code = error.response?.statusCode ?? 0;
-        String msg = error.response?.statusMessage ?? '';
+        String? msg;
+        if (error.response?.data.isEmpty) {
+          msg = error.response?.statusMessage ?? '';
+        } else {
+          dynamic data = jsonDecode(error.response?.data);
+          msg = data['msg'];
+        }
 
+        logger.e('a_response catch DioError: message: $msg, code: $code');
         return AResponse(null, code: code, message: msg);
       }
       return AResponse(null, message: error.toString());
