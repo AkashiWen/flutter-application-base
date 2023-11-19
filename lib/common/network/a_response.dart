@@ -34,10 +34,11 @@ class AResponse<T> {
       if (error is DioError) {
         int code = error.response?.statusCode ?? 0;
         String? msg;
-        if (error.response?.data.isEmpty) {
+        final responseBody = error.response?.data;
+        if (responseBody == null || responseBody == '' || responseBody == {}) {
           msg = error.response?.statusMessage ?? '';
         } else {
-          dynamic data = jsonDecode(error.response?.data);
+          dynamic data = jsonDecode(responseBody);
           msg = data['msg'];
         }
 
