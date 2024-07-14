@@ -1,5 +1,5 @@
-import 'package:common/base/mvvm/repo/dio_proxy.dart';
-import 'package:dio/src/interceptor.dart';
+import 'package:foundation/base/mvvm/repo/dio_proxy.dart';
+import 'package:dio/dio.dart' as dio;
 
 import '../config/build_config.dart';
 import 'sign_interceptor.dart';
@@ -31,14 +31,11 @@ class SampleDioProxy extends DioProxy {
 
   @override
   Map<String, dynamic> loadDefaultHeader() => {
-        "signType": "MD5",
-        "clientId": "2",
         "token": BuildConfig.token,
-        "typ": "JDBC",
       };
 
   @override
-  List<Interceptor> loadInterceptors() => [
+  List<dio.Interceptor> loadInterceptors() => [
     SignInterceptor(),
   ];
 }

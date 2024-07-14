@@ -1,8 +1,8 @@
 library repo;
 
-import 'package:common/base/mvvm/repo/api_repository.dart';
-import 'package:common/base/mvvm/repo/dio_proxy.dart';
-import 'package:common/common/network/dio_client.dart';
+import 'package:foundation/base/mvvm/repo/api_repository.dart';
+import 'package:foundation/base/mvvm/repo/dio_proxy.dart';
+import 'package:foundation/common/network/dio_client.dart';
 import '../http/sample_dio_proxy.dart';
 
 import '../config/api.dart';

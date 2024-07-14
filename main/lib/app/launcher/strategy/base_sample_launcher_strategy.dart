@@ -1,4 +1,4 @@
-import 'package:common/common/launcher/a_launcher_strategy.dart';
+import 'package:foundation/common/launcher/a_launcher_strategy.dart';
 
 /// 服务于具体项目的启动策略配置，可根据需要拓展
 abstract class BaseSampleLauncherStrategy extends BaseLauncherStrategy {

@@ -1,4 +1,4 @@
-export 'package:common/common/log/a_logger.dart';
+export 'package:foundation/common/log/a_logger.dart';
 export 'package:get/get.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'mvvm/base_repo.dart';

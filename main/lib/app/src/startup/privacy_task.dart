@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:common/common/log/a_logger.dart';
-import 'package:common/common/startup/flutter_startup.dart';
+import 'package:foundation/common/log/a_logger.dart';
+import 'package:foundation/common/startup/flutter_startup.dart';
 import 'package:flutter/material.dart';
-import 'package:common/common/top.dart';
+import 'package:foundation/common/top.dart';
 
 class PrivacyTask extends FlutterStartup {
   static String key = 'PrivacyTask';

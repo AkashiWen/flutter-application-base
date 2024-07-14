@@ -1,4 +1,4 @@
-name: common
+name: foundation
 description: A new Flutter package project.
 
 environment:
@@ -22,12 +22,12 @@ dependencies:
   logger: 1.1.0
 
   ## ---- network ----
-  dio: 4.0.0 # 网络请求
+  dio: 5.4.3+1
   crypto: 3.0.1  #MD5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.0
 
 flutter:

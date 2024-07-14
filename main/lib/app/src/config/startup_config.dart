@@ -1,4 +1,4 @@
-import 'package:common/common/startup/startup.dart';
+import 'package:foundation/common/startup/startup.dart';
 
 import '../startup/database_task.dart';
 import '../startup/firebase_task.dart';

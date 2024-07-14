@@ -1,6 +1,6 @@
-import 'package:common/base/mvvm/vm/base_view_model.dart';
-import 'package:common/common/log/a_logger.dart';
-import 'package:common/common/top.dart';
+import 'package:foundation/base/mvvm/vm/base_view_model.dart';
+import 'package:foundation/common/log/a_logger.dart';
+import 'package:foundation/common/top.dart';
 
 class BaseController extends BaseViewModel {
   @override

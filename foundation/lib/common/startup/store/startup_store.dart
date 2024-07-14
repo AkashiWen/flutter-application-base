@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:common/common/log/a_logger.dart';
-import 'package:common/common/startup/startup.dart';
+import 'package:foundation/common/log/a_logger.dart';
+import 'package:foundation/common/startup/startup.dart';
 
 /// 存储排好序的startup各种表
 class StartupStore {

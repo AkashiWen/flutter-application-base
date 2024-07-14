@@ -1,7 +1,7 @@
-import 'package:common/common/startup/dispatcher.dart';
+import 'package:foundation/common/startup/dispatcher.dart';
 import 'package:flutter/material.dart';
 
-abstract class Startup with Dispatcher {
+abstract class Startup implements Dispatcher {
   /// 创建任务
   Future<bool> create(BuildContext context);
 

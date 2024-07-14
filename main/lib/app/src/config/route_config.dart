@@ -1,5 +1,5 @@
 
-import 'package:common/base/route/a_route.dart';
+import 'package:foundation/base/route/a_route.dart';
 import 'package:main/app/src/page3/download_controller.dart';
 import 'package:main/app/src/page3/download_page.dart';
 import 'package:main/app_base/repository/file_repo.dart';

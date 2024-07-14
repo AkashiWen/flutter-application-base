@@ -1,6 +1,6 @@
-import 'package:common/base/mvvm/view/base_launcher_page.dart';
-import 'package:common/common/startup/startup.dart';
-import 'package:common/common/top.dart';
+import 'package:foundation/base/mvvm/view/base_launcher_page.dart';
+import 'package:foundation/common/startup/startup.dart';
+import 'package:foundation/common/top.dart';
 import 'package:flutter/material.dart';
 
 import '../../../app_base/config/route_name.dart';

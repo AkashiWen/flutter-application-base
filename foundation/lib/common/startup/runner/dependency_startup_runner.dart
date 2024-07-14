@@ -1,6 +1,6 @@
-import 'package:common/common/log/a_logger.dart';
-import 'package:common/common/startup/runner/startup_runner.dart';
-import 'package:common/common/startup/startup.dart';
+import 'package:foundation/common/log/a_logger.dart';
+import 'package:foundation/common/startup/runner/startup_runner.dart';
+import 'package:foundation/common/startup/startup.dart';
 import 'package:flutter/material.dart';
 
 import '../manager/startup_manager.dart';

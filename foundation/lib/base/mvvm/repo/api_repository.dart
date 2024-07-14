@@ -2,8 +2,8 @@ library api_service;
 
 import 'dart:typed_data';
 
-import 'package:common/common/network/download/progress_listener.dart';
-import 'package:common/common/top.dart';
+import 'package:foundation/common/network/download/progress_listener.dart';
+import 'package:foundation/common/top.dart';
 import 'package:dio/dio.dart';
 
 import '../../../common/network/dio_client.dart';

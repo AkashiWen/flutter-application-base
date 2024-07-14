@@ -11,9 +11,9 @@ class DioConfig extends BaseOptions {
     this.pemFilepath,
   }) : super(
           baseUrl: host,
-          connectTimeout: 30 * 1000,
-          receiveTimeout: 30000,
-          sendTimeout: 30000,
+          connectTimeout: const Duration(milliseconds: 7000),
+          receiveTimeout: const Duration(seconds: 7000),
+          sendTimeout: const Duration(seconds: 3),
           headers: header,
         );
 

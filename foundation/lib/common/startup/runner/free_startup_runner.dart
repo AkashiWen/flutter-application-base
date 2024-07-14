@@ -1,8 +1,8 @@
-import 'package:common/common/startup/manager/startup_manager.dart';
-import 'package:common/common/startup/runner/startup_runner.dart';
-import 'package:common/common/startup/startup.dart';
+import 'package:foundation/common/startup/manager/startup_manager.dart';
+import 'package:foundation/common/startup/runner/startup_runner.dart';
+import 'package:foundation/common/startup/startup.dart';
 import 'package:flutter/material.dart';
-import 'package:common/common/log/a_logger.dart';
+import 'package:foundation/common/log/a_logger.dart';
 
 /// 无依赖关系的startup执行器
 class FreeStartupRunner extends StartupRunner {

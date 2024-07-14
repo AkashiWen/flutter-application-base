@@ -1,25 +1,20 @@
 library network;
 
+import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:common/common/top.dart';
-import 'package:dio/adapter.dart';
-
 // import 'package:dio/adapter_browser.dart';
 import 'package:dio/dio.dart';
+import 'package:foundation/common/top.dart';
 import 'package:logger/logger.dart';
-import 'dart:convert';
 
 import 'download/progress_listener.dart';
-import 'status_code.dart';
-
-// parts
-part 'dio_config.dart';
-
-part './logger.dart';
 
 part './a_response.dart';
+part './logger.dart';
+// parts
+part 'dio_config.dart';
 
 enum Method { get, post, put, delete }
 
@@ -37,42 +32,6 @@ abstract class DioClient {
     _dio.interceptors
       ..add(LogInterceptor(requestBody: true, responseBody: true))
       ..addAll(config.interceptors ?? []);
-    // SSL证书
-    HttpClientAdapter httpClientAdapter = _dio.httpClientAdapter;
-    if (httpClientAdapter is DefaultHttpClientAdapter) {
-      // 1. pem string
-      if (!config.pem.isNullOrEmpty) {
-        httpClientAdapter.onHttpClientCreate = (client) {
-          client.badCertificateCallback =
-              (X509Certificate cert, String host, int port) =>
-                  cert.pem == config.pem.val;
-          //代理
-          _appendProxy(client);
-        };
-      } else if (!config.pemFilepath.isNullOrEmpty) {
-        httpClientAdapter.onHttpClientCreate = (client) {
-          // 2. pem file
-          SecurityContext sc = SecurityContext();
-          // file is the path of certificate
-          sc.setTrustedCertificates(config.pemFilepath.val);
-          HttpClient httpClient = HttpClient(context: sc);
-          //代理
-          _appendProxy(httpClient);
-          return httpClient;
-        };
-      } else {
-        httpClientAdapter.onHttpClientCreate = (client) {
-          // 3. no verification
-          client.badCertificateCallback =
-              (X509Certificate cert, String host, int port) => true;
-          // 代理
-          _appendProxy(client);
-        };
-      }
-    }
-    // else if (httpClientAdapter is BrowserHttpClientAdapter) {
-    //   // TODO 浏览器adapter
-    // }
   }
 
   _appendProxy(HttpClient httpClient) {

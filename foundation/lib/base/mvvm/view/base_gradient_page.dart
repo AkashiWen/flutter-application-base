@@ -1,5 +1,5 @@
-import 'package:common/base/mvvm/view/base_view.dart';
-import 'package:common/common/top.dart';
+import 'package:foundation/base/mvvm/view/base_view.dart';
+import 'package:foundation/common/top.dart';
 import 'package:flutter/material.dart';
 
 abstract class BaseGradientPage<C> extends BaseView<C> {

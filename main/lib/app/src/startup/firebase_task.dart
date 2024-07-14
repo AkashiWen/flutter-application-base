@@ -1,5 +1,5 @@
-import 'package:common/common/log/a_logger.dart';
-import 'package:common/common/startup/flutter_startup.dart';
+import 'package:foundation/common/log/a_logger.dart';
+import 'package:foundation/common/startup/flutter_startup.dart';
 import 'package:flutter/material.dart';
 
 import 'privacy_task.dart';
