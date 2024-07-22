@@ -33,28 +33,20 @@ abstract class BaseView<C> extends GetView<C> with NavigationHelper {
   Color get background => Get.theme.primaryColor;
 
   /// 返回按钮点击
-  Future<bool>? onBackPressed() => null;
+  bool get canPop => true;
 
   @override
   Widget build(BuildContext context) {
-    // bottom navigation
-    // SystemChrome.setSystemUIOverlayStyle(
-    //   SystemUiOverlayStyle(
-    //     statusBarColor: statusBarColor,
-    //     systemNavigationBarColor: bottomNavigationBarColor,
-    //   ),
-    // );
-
-    return WillPopScope(
-      onWillPop: () => onBackPressed.call() ?? Future.value(true),
+    return PopScope(
+      canPop: canPop,
       child: Scaffold(
         // appbar
         appBar: buildAppBar(),
         // draw
         drawer: buildDrawer(context) != null
             ? Builder(
-          builder: (BuildContext context) => buildDrawer(context)!,
-        )
+                builder: (BuildContext context) => buildDrawer(context)!,
+              )
             : null,
         // bottom
         bottomNavigationBar: buildBottomNavigation(),
