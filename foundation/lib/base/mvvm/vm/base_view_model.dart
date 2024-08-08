@@ -5,7 +5,7 @@ import '../../../common/log/a_logger.dart';
 import '../../../common/network/dio_client.dart';
 import '../../../common/network/status_code.dart';
 import '../../helper/navigation_helper.dart';
-import '../repo/api_repository.dart';
+import '../repo/base_repository.dart';
 
 /// Controller基類
 /// BaseVM

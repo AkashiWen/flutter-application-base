@@ -9,7 +9,7 @@ import '../page1/home_page.dart';
 import '../page1/home_page_controller.dart';
 import '../page2/appbar_page.dart';
 import '../page2/appbar_page_controller.dart';
-import '../../../app_base/mvvm/base_repo.dart';
+import '../../../app_base/mvvm/app_base_repo.dart';
 import 'package:get/get.dart';
 
 /// 服务项目的页面路由配置

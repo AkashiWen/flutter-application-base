@@ -16,7 +16,7 @@ part '../model/local_model.dart';
 
 /// 网络请求隔离层，目的是不暴露诸如TesoHttp、Http具体的请求实现给上层业务
 /// BaseRepo
-abstract class ApiRepository {
+abstract class BaseRepository {
   late final CancelToken _globalCancelToken = CancelToken();
 
   abstract DioProxy proxy;

@@ -1,7 +1,7 @@
 import 'package:main/app_base/exports.dart';
 import 'package:main/app_base/repository/file_repo.dart';
 
-class DownloadController extends BaseController {
+class DownloadController extends AppBaseController {
   final FileRepo _fileRepo = Get.find();
 
   downFile() async {

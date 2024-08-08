@@ -1,4 +1,4 @@
 
-import '../../../app_base/mvvm/base_controller.dart';
+import '../../../app_base/mvvm/app_base_controller.dart';
 
-class HomePageController extends BaseController {}
+class HomePageController extends AppBaseController {}
