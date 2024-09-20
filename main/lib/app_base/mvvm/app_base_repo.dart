@@ -17,4 +17,8 @@ part '../model/menu_status_response.dart';
 class AppBaseRepo extends BaseRepository {
   @override
   DioProxy proxy = SampleDioProxy.get();
+
+  Future<AResponse<T>> mockData<T>(Function doMock) {
+    return Future.value(AResponse(doMock.call(), code: 200));
+  }
 }
