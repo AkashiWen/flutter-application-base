@@ -71,7 +71,7 @@ class _WebViewWidgetState extends State<WebViewWidget> {
   Widget build(BuildContext context) {
     return InAppWebView(
       key: webViewKey,
-      initialUrlRequest: URLRequest(url: Uri.parse(widget.url)),
+      initialUrlRequest: URLRequest(url: WebUri(widget.url)),
       initialOptions: options,
       pullToRefreshController: pullToRefreshController,
       onWebViewCreated: (controller) {

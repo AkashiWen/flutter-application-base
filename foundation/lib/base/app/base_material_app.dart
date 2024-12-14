@@ -14,8 +14,8 @@ abstract class BaseMaterialApp<T extends ALauncherStrategy>
   BaseMaterialApp(
     this.launcherStrategy,
     this.route, {
-    Key? key,
-  }) : super(key: key) {
+    super.key,
+  }) {
     init();
   }
 

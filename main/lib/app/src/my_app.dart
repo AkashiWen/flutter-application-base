@@ -6,7 +6,6 @@ import '../launcher/strategy/base_sample_launcher_strategy.dart';
 import 'config/translation/translation_config.dart';
 
 /// app
-// ignore: must_be_immutable
 class MyApp extends BaseMaterialApp<BaseSampleLauncherStrategy> {
   MyApp({
     super.key,
