@@ -1,5 +1,5 @@
 import 'package:main/app_base/exports.dart';
-import 'package:main/app_base/config/colors.dart';
+import 'package:main/app_base/res/colors.dart';
 import 'package:flutter/material.dart';
 
 /// tabbar + tabbarview
