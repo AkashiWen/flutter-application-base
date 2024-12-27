@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:foundation/common/storeage/local_storage.dart';
 import 'package:foundation/common/top.dart';
 import 'package:main/app_base/exports.dart';
 import 'package:flutter/cupertino.dart';
@@ -35,11 +36,14 @@ class AppLauncher {
       reportErrorAndLog(details);
     };
 
-    runZonedGuarded(
-        () => runApp(MyApp(
-              launcherStrategy: launcherStrategy,
-              route: RouteConfig(),
-            )), (error, stack) {
+    runZonedGuarded(() async {
+      WidgetsFlutterBinding.ensureInitialized();
+      await ALocalStorage.initialize();
+      runApp(MyApp(
+        launcherStrategy: launcherStrategy,
+        route: RouteConfig(),
+      ));
+    }, (error, stack) {
       // 没被我们catch的异常
       reportErrorAndLog(FlutterErrorDetails(stack: stack, exception: error));
     });
