@@ -30,12 +30,10 @@ class SampleDioProxy extends DioProxy {
   String proxyPort = BuildConfig.proxyPort;
 
   @override
-  Map<String, dynamic> loadDefaultHeader() => {
-        "token": BuildConfig.token,
-      };
+  Map<String, dynamic> loadDefaultHeader() => {};
 
   @override
   List<dio.Interceptor> loadInterceptors() => [
-    SignInterceptor(),
-  ];
+        SignInterceptor(),
+      ];
 }
