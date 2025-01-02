@@ -54,6 +54,10 @@ class AResponse<T> {
     Response<String> dioResponse,
     T? Function(dynamic data)? onResponse,
   ) {
+    if (dioResponse.data.isNullOrEmpty) {
+      return AResponse(null,
+          code: dioResponse.statusCode, message: dioResponse.statusMessage);
+    }
     Map<String, dynamic> map = jsonDecode(dioResponse.data!);
     var code = map["code"] ?? dioResponse.statusCode;
     var message = map["message"] ?? map["msg"] ?? dioResponse.statusMessage;
