@@ -55,13 +55,22 @@ class AResponse<T> {
     T? Function(dynamic data)? onResponse,
   ) {
     if (dioResponse.data.isNullOrEmpty) {
-      return AResponse(null,
+      return AResponse(onResponse?.call({}),
           code: dioResponse.statusCode, message: dioResponse.statusMessage);
     }
-    Map<String, dynamic> map = jsonDecode(dioResponse.data!);
-    var code = map["code"] ?? dioResponse.statusCode;
-    var message = map["message"] ?? map["msg"] ?? dioResponse.statusMessage;
-    var data = map["data"] ?? map; // data 可能是List 或 Object 或 基本數據類型（bool）
+    var code = dioResponse.statusCode;
+    var message = dioResponse.statusMessage;
+    dynamic data;
+    final originalData = dioResponse.data;
+    if (originalData?.startsWith('[') == true) {
+      List<dynamic> list = jsonDecode(originalData!);
+      data = list;
+    } else {
+      Map<String, dynamic> map = jsonDecode(dioResponse.data!);
+      code = map["code"] ?? dioResponse.statusCode;
+      message = map["message"] ?? map["msg"] ?? dioResponse.statusMessage;
+      data = map["data"] ?? map; // data 可能是List 或 Object 或 基本數據類型（bool）
+    }
     logger.w(
         ("---> header status code: ${dioResponse.statusCode}, message: ${dioResponse.statusMessage}"));
     logger.i("---> response: code[$code], || "
